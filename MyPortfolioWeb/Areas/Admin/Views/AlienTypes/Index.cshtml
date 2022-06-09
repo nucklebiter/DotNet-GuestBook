@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MyPortfolio.Models.AlienType>
+
+@{
+    ViewData["Title"] = "Alien Types";
+}
+
+<partial name="_Notification" />
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Alien Types</h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="AlienTypes" class="btn btn-primary" asp-action="Create"><i class="bi bi-plus-circle"></i> &nbsp Create New</a>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlienTypeName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="col-6">
+                       <a asp-action="Details" asp-route-id="@item.Id" style="text-decoration:none">@Html.DisplayFor(modelItem => item.AlienTypeName)</a>
+                    </div>
+                    <div class="col-6 text-end">
+                        <button type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</button>
+                    </div>
+                </div> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

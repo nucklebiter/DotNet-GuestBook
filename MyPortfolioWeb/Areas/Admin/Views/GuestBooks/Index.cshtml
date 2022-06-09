@@ -1,0 +1,44 @@
+﻿<partial name="_Notification" />
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Guest Book</h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="GuestBooks" class="btn btn-primary" asp-action="Upsert"><i class="bi bi-plus-circle"></i> &nbsp Create New</a>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<table id="tblData" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Guest Type
+            </th>
+            <th>
+                Do You Believe?
+            </th>
+            <th>
+                Message
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts{
+    <script src="~/js/guestBook.js"></script>
+}

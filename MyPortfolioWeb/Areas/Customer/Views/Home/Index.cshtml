@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MyPortfolio.Models.GuestBook>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<p class="text-center">Welcome! This site was built to showcase my knowlege and ablitity. If you are intrested in knowing what techonlogies where used, please visit the techonlogies pages.</p>
+<br />
+<p class="text-center">Also, please sign my Guest Book below!</p>
+<hr />
+<partial name="_Notification" />
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h1>Guest Book</h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Home" class="btn btn-primary" asp-action="Upsert"><i class="bi bi-plus-circle"></i> &nbsp Create New</a>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<table id="tblDataHome" class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Message
+            </th>
+            <th>
+                Who are you?
+            </th>
+            <th>
+                Do You Believe?
+            </th>
+        </tr>
+    </thead>
+</table>
+
+@section Scripts{
+    <script src="~/js/guestBookHome.js"></script>
+}

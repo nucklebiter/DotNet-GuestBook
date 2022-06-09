@@ -1,0 +1,34 @@
+﻿@model MyPortfolio.Models.GuestType
+
+@{
+    ViewData["Title"] = "Create Guest Type";
+}
+
+<h1>Create Guest Type</h1>
+<hr />
+<form asp-action="Create">
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GuestTypeName" class="form-label"></label>
+                <input asp-for="GuestTypeName" class="form-control" />
+                <span asp-validation-for="GuestTypeName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <br />
+    
+        <div>
+            <button type="submit" value="Create" class="btn btn-primary">Save</button>
+        </div>
+        <br />
+        <div>
+            <button asp-action="Index" class="btn btn-primary">Back to List</button>
+        </div>
+    
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
